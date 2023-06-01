@@ -1,0 +1,104 @@
+
+nav {
+    display: flex;
+    flex-direction: column;
+}
+
+nav .top-nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+}
+nav .top-nav .logo-txt {
+    margin-left: 50px;
+    font-weight: bold;
+    font-size: 40px;
+    font-family: cursive;
+    opacity: 0.8;
+}
+nav .top-nav .nav-right, ul {
+    margin-right: 50px;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+nav .top-nav .nav-right ul li {
+    display: flex;
+    font-weight: bold;
+    font-size: 20px;
+    opacity: 0.7;
+}
+nav .top-nav .nav-right .nav-cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 100px;
+    border: 1px solid rgb(37, 34, 34);
+}
+nav .top-nav .nav-right .nav-cart .cart-logo{
+    margin-right: 2px;
+    font-size: 18px;
+    font-weight: bold;
+}
+nav .top-nav .nav-right .nav-cart .cart-num{
+    font-weight: bold;
+    color: rgb(187, 43, 55);
+}
+
+
+
+nav .bottom-nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 5px;
+    border-bottom: 1px solid #c0b9b9;
+}
+nav .bottom-nav .search-box {
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+    padding: 7px;
+}
+nav .bottom-nav .search-box input[type='search'] {
+    width: 300px;
+    padding: 7px;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid rgb(233, 227, 227);
+}
+nav .bottom-nav .search-box .search-icon {
+    height: auto;
+    padding: 5px;
+    font-size: 40px;
+    border-radius: 5px;
+    border: 2px solid rgb(233, 227, 227);
+    opacity: 0.8;
+}
+nav .bottom-nav .search-num  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: 900;
+    color: rgb(175, 63, 63);
+}
+nav .bottom-nav .profile  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    font-weight: bold;
+    
+}
+nav .bottom-nav .prof:first-child  {
+    padding: 5px;
+    font-size: 30px;
+    border-radius: 100%;
+    border: 1px solid rgb(59, 56, 56);
+    color: rgb(59, 56, 56);
+}
