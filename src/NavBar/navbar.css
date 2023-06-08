@@ -11,6 +11,10 @@ nav .top-nav {
     justify-content: space-between;
     padding: 5px;
 }
+nav .top-nav .bar-icon {
+    font-size: 30px;
+    margin-right: 20px;
+}
 nav .top-nav .logo-txt {
     margin-left: 50px;
     font-weight: bold;
@@ -24,10 +28,9 @@ nav .top-nav .nav-right, ul {
     flex-direction: row;
     gap: 30px;
 }
-nav .top-nav .nav-right ul li {
+nav .top-nav .nav-right ul .li:hover {
     display: flex;
     font-weight: bold;
-    font-size: 20px;
     opacity: 0.7;
 }
 nav .top-nav .nav-right .nav-cart {
@@ -92,13 +95,47 @@ nav .bottom-nav .profile  {
     align-items: center;
     justify-content: center;
     gap: 30px;
-    font-weight: bold;
-    
+    font-weight: bold;   
+
 }
-nav .bottom-nav .prof:first-child  {
-    padding: 5px;
-    font-size: 30px;
-    border-radius: 100%;
-    border: 1px solid rgb(59, 56, 56);
-    color: rgb(59, 56, 56);
+nav .bottom-nav .profile .prof:hover {
+    cursor: pointer;
+    color: rgb(175, 40, 40);
+}
+
+
+
+nav  .search-container{
+    display: none;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+nav .search-container .search-item {
+    position: absolute;
+    left: 10%;
+    width: 30%;
+    max-height: 60%;
+    height: auto;
+    overflow-y: scroll;
+    padding: 15px;
+    font-weight: bold;
+    border-radius: 3px;
+    background: rgb(151, 151, 153);
+}
+nav .search-container .search-item .item-list{
+    width: 100%;
+    padding: 7px;
+    font-weight: bold;
+    border-bottom: 1px solid #5a5959;
+    color: white;
+    opacity: 0.8;
+}
+nav .search-container .search-item .item-list:hover {
+    cursor: pointer;
+}
+nav .search-active {
+    display: block;
 }

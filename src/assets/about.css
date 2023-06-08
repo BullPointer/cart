@@ -1,0 +1,47 @@
+
+
+.about-us {
+    margin: 50px 100px;
+}
+.about-us header, .about-us h3, .about-us h2 {
+    margin: 18px 0;
+}
+.about-us header {
+    font-size: 40px;
+    font-weight: bold;
+    opacity: 0.8;
+    text-decoration: underline;
+}
+.about-us h3 {
+    font-style: italic;
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 0.8;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.about-us h2 {
+    font-size: 18px;
+    font-weight: bold;
+    opacity: 0.8;
+}
+.about-us p {
+    font-size: medium;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+@media only screen and (max-width: 700px) {
+    .about-us {
+        margin: 50px 30px;
+    }
+    .about-us header {
+        font-size: 30px;
+    }
+    .about-us h3 {
+        font-size: 16px;
+    }
+    .about-us h2 {
+        font-size: 15px;
+    }
+    .about-us p {
+        font-size: small;
+    }
+}

@@ -45,3 +45,19 @@
 .bottom .bottom-bottom div:first-child {
     font-weight: bold;
 }
+
+@media only screen and (max-width: 700px) {
+    .bottom {
+        margin-top: 20px;
+        padding-top: 100px;
+    }
+
+    .bottom .top-bottom {
+        width: 100%;
+        height: max-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        gap: 25px;   
+    }
+}

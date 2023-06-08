@@ -1,40 +1,78 @@
-import './navbar.css';
-import { Icon } from '@iconify/react';
+/* eslint-disable react/prop-types */
+/* eslint-disable react-hooks/exhaustive-deps */
+import "./navbar.css";
+import { useEffect, useState } from "react";
+import { createSearchParams, useNavigate } from "react-router-dom";
+import BigScreenNav from "./bigScreenNav";
+import SmallScreenNav from "./smallScreenNav";
+import { useData } from "../utils/DataProvider";
 
 export default function Navbar() {
+  const navigate = useNavigate();
+  const { products } = useData();
+  const [items, setItems] = useState(null);
+  const [category, setCategory] = useState('');
+  const [active, setActive] = useState(false);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const screenFunc = () => setScreenWidth(window.innerWidth);
+  const activeSearch = () => (active ? "search-active" : "");
+
+  const filterItem = ({ target }) => {
+    const result = products?.filter((item) =>
+      item.title.toLowerCase().includes(target.value.toLowerCase())
+    );
+    const filteredCategory = products?.find((item) =>
+      item.category.toLowerCase().includes(target.value.toLowerCase())
+    );
+    setItems(result);
+    setCategory(filteredCategory.category);
+  };
+  const navigateSearchedItem = (cat) => {
+    navigate(
+      {
+        pathname: "/p",
+        search: createSearchParams({
+          type: "search",
+          category: cat,
+        }).toString(),
+      },
+      {
+        state: {
+          searchData: items,
+        },
+      }
+    );
+    setActive(false);
+  };
+  const handleKeypress = ({code}) => {
+    if (code === "Enter") return navigateSearchedItem(category);
+  }
+  useEffect(() => {
+    window.addEventListener("click", () => setActive(false));
+    window.addEventListener("resize", screenFunc);
+    return () => window.removeEventListener("resize", screenFunc);
+  }, []);
+  if (screenWidth <= 700) {
+    return (
+      <SmallScreenNav
+        setActive={setActive}
+        activeSearch={activeSearch}
+        navigateItem={navigateSearchedItem}
+        filterItem={filterItem}
+        items={items}
+        category={category}
+      />
+    );
+  }
   return (
-    <nav>
-
-        <div className='top-nav'>
-            <div className='logo-txt'>Cart</div>
-            <div className='nav-right'>
-                <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Contact</li>
-                </ul>
-                <div className='nav-cart'>
-                    <Icon className='cart-logo' icon="teenyicons:cart-outline" />
-                    <div className='cart-num'>0</div>
-                </div>
-            </div>
-        </div>
-
-        <div className='bottom-nav'>
-            <div className='search-box'>
-                <input type="search" />
-                <Icon className='search-icon' icon="iconamoon:search-fill" />
-            </div>
-            <div className='search-num'>
-                <Icon icon="gg:phone" />
-                <div>+1 442-772-2342</div>
-            </div>
-            <div className='profile'>
-                <Icon className='prof' icon="fluent-mdl2:contact" />
-                <div className='prof'>Login</div>
-            </div>
-        </div>
-
-    </nav>
-  )
+    <BigScreenNav
+      setActive={setActive}
+      activeSearch={activeSearch}
+      navigateItem={navigateSearchedItem}
+      filterItem={filterItem}
+      items={items}
+      category={category}
+      handleKeypress={handleKeypress}
+    />
+  );
 }
