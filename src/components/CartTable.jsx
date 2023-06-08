@@ -1,7 +1,5 @@
 /* eslint-disable no-unused-vars */
 import { createSearchParams, useNavigate } from "react-router-dom";
-import { NumericFormat } from 'react-number-format';
-// import { TextField } from '@mui/material';
 import { useCartInfo } from "../utils/CartProvider";
 import { getCart, removeCart } from "./LocalStorage";
 import NoCart from "./NoCart";
