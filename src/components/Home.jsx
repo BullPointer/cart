@@ -13,7 +13,6 @@ export const Home = () => {
   const navigate = useNavigate();
 
   const navigateItem = (objId, cat) => {
-    console.log(objId);
     if (objId) {
       navigate({
         pathname: "/cart/item",
