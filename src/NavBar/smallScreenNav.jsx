@@ -35,11 +35,11 @@ export default function SmallScreenNav({
   return (
     <nav className="nav">
       <div className="top-nav">
-        <NavLink to="/" className="logo-txt">
+        <NavLink to="/cart" className="logo-txt">
           Cart
         </NavLink>
         <div className="nav-right">
-          <NavLink to="/my-cart" className="nav-cart">
+          <NavLink to="/cart/my-cart" className="nav-cart">
             <Icon className="cart-logo" icon="teenyicons:cart-outline" />
             <div className="cart-num">{useCartInfo().cartCount}</div>
           </NavLink>
@@ -67,10 +67,10 @@ export default function SmallScreenNav({
           </div>
         ) : (
           <div className="profile">
-            <NavLink to="sign-up" className="prof">
+            <NavLink to="/cart/sign-up" className="prof">
               Sign up{" "}
             </NavLink>
-            <NavLink to="sign-in" className="prof">
+            <NavLink to="/cart/sign-in" className="prof">
               Sign in
             </NavLink>
           </div>
@@ -112,9 +112,9 @@ export default function SmallScreenNav({
             icon="icon-park-solid:big-x"
           />
         </div>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/about-us">About</NavLink>
-        <NavLink to="/contact-us">Contact</NavLink>
+        <NavLink to="/cart">Home</NavLink>
+        <NavLink to="/cart/about-us">About</NavLink>
+        <NavLink to="/cart/contact-us">Contact</NavLink>
       </ul>
     </nav>
   );

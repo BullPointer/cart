@@ -26,14 +26,14 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="cart" element={<Home />} />
-            <Route path="item" element={<Item />} />
-            <Route path="p" element={<DisplaySelect />} />
-            <Route path="my-cart" element={<ShoppingCart />} />
-            <Route path="about-us" element={<AboutUs />} />
-            <Route path="contact-us" element={<ContactUs />} />
-            <Route path="sign-in" element={<Signin />} />
-            <Route path="sign-up" element={<Signup />} />
+            <Route path="/cart" element={<Home />} />
+            <Route path="/cart/item" element={<Item />} />
+            <Route path="/cart/p" element={<DisplaySelect />} />
+            <Route path="/cart/my-cart" element={<ShoppingCart />} />
+            <Route path="/cart/about-us" element={<AboutUs />} />
+            <Route path="/cart/contact-us" element={<ContactUs />} />
+            <Route path="/cart/sign-in" element={<Signin />} />
+            <Route path="/cart/sign-up" element={<Signup />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
           <Bottombar />

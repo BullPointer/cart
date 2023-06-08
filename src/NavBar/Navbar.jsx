@@ -30,7 +30,7 @@ export default function Navbar() {
   const navigateSearchedItem = (cat) => {
     navigate(
       {
-        pathname: "/p",
+        pathname: "/cart/p",
         search: createSearchParams({
           type: "search",
           category: cat,

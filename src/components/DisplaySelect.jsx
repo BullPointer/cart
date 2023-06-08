@@ -19,7 +19,7 @@ export default function DisplaySelect() {
   const navigateItem = (objId, cat) => {
     if (objId) {
       navigate({
-        pathname: "/item",
+        pathname: "/cart/item",
         search: createSearchParams({ category: cat, id: objId }).toString(),
         path: location.pathname
       });

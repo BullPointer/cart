@@ -14,9 +14,10 @@ export default function DisplayCards({
         <div className="item-box">
           {categories?.map((item, index) => (
             <div key={index}>
+              {console.log(item.category)}
               <div className="item">
                 <img
-                  onClick={() => navigateItem(item.id)}
+                  onClick={() => navigateItem(item.id, item.category)}
                   src={item.image}
                   alt=""
                 />

@@ -47,7 +47,7 @@ export default function BoxTotal() {
       )}
 
       <div className="btn-box">
-        <Link to="/" className="shop-btn">
+        <Link to="/cart" className="shop-btn">
           Continue Shopping
         </Link>
         {!getCart().length == 0 ? <div className="shop-btn">Checkout</div> : ""}

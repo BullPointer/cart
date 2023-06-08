@@ -18,22 +18,22 @@ export default function BigScreenNav({
   return (
     <nav>
       <div className="top-nav">
-        <NavLink to="/" className="logo-txt">
+        <NavLink to="/cart" className="logo-txt">
           Cart
         </NavLink>
         <div className="nav-right">
           <ul>
-            <NavLink className="li" to="/">
+            <NavLink className="li" to="/cart">
               Home
             </NavLink>
-            <NavLink className="li" to="/about-us">
+            <NavLink className="li" to="/cart/about-us">
               About
             </NavLink>
-            <NavLink className="li" to="/contact-us">
+            <NavLink className="li" to="/cart/contact-us">
               Contact
             </NavLink>
           </ul>
-          <NavLink to="my-cart" className="nav-cart">
+          <NavLink to="/cart/my-cart" className="nav-cart">
             <Icon className="cart-logo" icon="teenyicons:cart-outline" />
             <div className="cart-num">{count}</div>
           </NavLink>
@@ -85,10 +85,10 @@ export default function BigScreenNav({
           </div>
         ) : (
           <div className="profile">
-            <NavLink to="sign-up" className="prof">
+            <NavLink to="/cart/sign-up" className="prof">
               Sign up{" "}
             </NavLink>
-            <NavLink to="sign-in" className="prof">
+            <NavLink to="/cart/sign-in" className="prof">
               Sign in
             </NavLink>
           </div>

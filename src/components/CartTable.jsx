@@ -23,7 +23,7 @@ export default function CartTable() {
   const navigateItem = (objId) => {
     if (objId) {
       navigate({
-        pathname: "/item",
+        pathname: "/cart/item",
         search: createSearchParams({ id: objId }).toString(),
         path: location.pathname,
       });
