@@ -13,8 +13,8 @@ export default function Navbar() {
   const [items, setItems] = useState(null);
   const [category, setCategory] = useState('');
   const [active, setActive] = useState(false);
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-  const screenFunc = () => setScreenWidth(window.innerWidth);
+  const [screenWidth, setScreenWidth] = useState(screen.width);
+  const screenFunc = () => setScreenWidth(screen.width);
   const activeSearch = () => (active ? "search-active" : "");
 
   const filterItem = ({ target }) => {
